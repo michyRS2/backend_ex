@@ -1,0 +1,19 @@
+{
+  "name": "ai2_ex1",
+  "version": "1.0.0",
+  "main": "app.js",
+  "start": "node src/App.js",
+  "scripts": {
+    "dev": "nodemon src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "pg": "^8.14.1",
+    "sequelize": "^6.37.7"
+  }
+}
