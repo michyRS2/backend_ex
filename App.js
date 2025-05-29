@@ -10,8 +10,12 @@ app.use(express.json());
 
 // Importação de rotas
 const employeeRouters = require("./routes/employeeRoute");
+const roleRouter = require('./routes/role');
+
 // Rota
 app.use("/employee", employeeRouters);
+app.use("/roles", roleRouter);
+
 
 // Configurações
 app.set("port", process.env.PORT || 3000);
