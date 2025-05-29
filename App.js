@@ -7,7 +7,7 @@ console.log("Files in src:", fs.readdirSync("./src"));
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const { sequelize, Role } = require("./model");
+//const { sequelize, Role } = require("./model");
 
 app.use(cors());
 // Middlewares
@@ -29,7 +29,7 @@ app.use("/teste", (req, res) => {
 app.use("/", (req, res) => {
   res.send("Hello World");
 });
-
+/*
 (async () => {
   try {
     await sequelize.authenticate();
@@ -55,4 +55,4 @@ app.use("/", (req, res) => {
   } catch (error) {
     console.error("Erro ao iniciar a aplicação: ", error);
   }
-})();
+})();*/
