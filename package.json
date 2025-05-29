@@ -2,7 +2,7 @@
   "name": "ai2_ex1",
   "version": "1.0.0",
   "main": "app.js",
-  "start": "node src/App.js",
+  "start": "node App.js",
   "scripts": {
     "dev": "nodemon src/app.js"
   },
