@@ -51,3 +51,9 @@ app.use("/", (req, res) => {
     console.error("Erro ao iniciar a aplicação: ", error);
   }
 })();*/
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor a correr na porta ${PORT}`);
+});
+
