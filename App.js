@@ -1,9 +1,4 @@
 
-console.log("Current working directory:", process.cwd());
-const fs = require("fs");
-console.log("Files in current dir:", fs.readdirSync("."));
-console.log("Files in src:", fs.readdirSync("./src"));
-
 const express = require("express");
 const app = express();
 const cors = require("cors");
