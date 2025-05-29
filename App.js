@@ -1,8 +1,8 @@
-
 const express = require("express");
 const app = express();
 const cors = require("cors");
-//const { sequelize, Role } = require("./model");
+const sequelize = require("./model/database");
+const Role = require("./model/Role");
 
 app.use(cors());
 // Middlewares
@@ -12,15 +12,13 @@ app.use(express.json());
 const employeeRouters = require("./routes/employeeRoute");
 const roleRouter = require('./routes/role');
 
-// Rota
+// Rotas
 app.use("/employee", employeeRouters);
 app.use("/roles", roleRouter);
-
 
 // Configurações
 app.set("port", process.env.PORT || 3000);
 
-// Rotas
 app.use("/teste", (req, res) => {
   res.send("Rota TESTE.");
 });
@@ -28,8 +26,8 @@ app.use("/teste", (req, res) => {
 app.use("/", (req, res) => {
   res.send("Hello World");
 });
-/*
-(async () => {
+
+async function startServer() {
   try {
     await sequelize.authenticate();
     console.log("Ligação à base de dados estabelecida");
@@ -45,7 +43,7 @@ app.use("/", (req, res) => {
       ]);
       console.log("Roles criados!");
     } else {
-      console.log("Roles já existem, tenha um bom dia");
+      console.log("Roles já existem, tudo ok");
     }
 
     app.listen(app.get("port"), () => {
@@ -54,10 +52,7 @@ app.use("/", (req, res) => {
   } catch (error) {
     console.error("Erro ao iniciar a aplicação: ", error);
   }
-})();*/
+}
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Servidor a correr na porta ${PORT}`);
-});
-
+// Inicia o servidor
+startServer();
