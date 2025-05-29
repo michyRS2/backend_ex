@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 var cors = require("cors");
-const { Role } = require("./model");
+const { sequelize, Role } = require("./model");
 
 app.use(cors());
 //Middlewares
