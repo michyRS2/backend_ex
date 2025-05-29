@@ -1,22 +1,21 @@
 const express = require("express");
 const app = express();
-var cors = require("cors");
+const cors = require("cors");
 const { sequelize, Role } = require("./model");
 
 app.use(cors());
-//Middlewares
+// Middlewares
 app.use(express.json());
 
-//importação de rotas[1]
+// Importação de rotas
 const employeeRouters = require("./routes/employeeRoute");
-const sequelize = require("./model/database");
-//Rota
+// Rota
 app.use("/employee", employeeRouters);
 
-//Configurações
+// Configurações
 app.set("port", process.env.PORT || 3000);
 
-//Rotas
+// Rotas
 app.use("/teste", (req, res) => {
   res.send("Rota TESTE.");
 });
